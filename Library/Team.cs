@@ -26,11 +26,14 @@ namespace Library
         /// </summary>
         const int MAX_RISERVA_PLAYERS = 3;
         const int MAX_ROSA_PLAYERS = 11;
+        int nGiocatoriRosa, nGiocatoriRiserva;  //numero di giocatori rosa e riserva attualmente nella lista
 
         public Team(string name)
         {
             this.name = name;
             players = new List<Player>();
+            nGiocatoriRiserva= 0;
+            nGiocatoriRosa = 0;
         }
 
         /// <summary>
