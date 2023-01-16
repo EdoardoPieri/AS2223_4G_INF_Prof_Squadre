@@ -45,7 +45,27 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
-            
+            if (player.Role == Player.ERole.Rosa)
+            {
+                if (nGiocatoriRosa <= MAX_ROSA_PLAYERS)
+                {
+                    players.Add(player);
+                    nGiocatoriRosa++;
+                    return true;
+                }
+                else return false;
+            }
+            else if (player.Role == Player.ERole.Riserva)
+            {
+                if (nGiocatoriRiserva <= MAX_RISERVA_PLAYERS)
+                {
+                    players.Add(player);
+                    nGiocatoriRiserva++;
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
         }
 
         /// <summary>
