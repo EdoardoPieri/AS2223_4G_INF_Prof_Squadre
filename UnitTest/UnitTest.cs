@@ -12,7 +12,12 @@ namespace UnitTest
         [Test]
         public void AddPlayers()
         {
-            // TODO U.1
+            Team team = new Team("team 1");
+            for(int c = 0; c <= 3; c++)
+            {
+                team.AddPlayer(new Player("mario", "rossi", Player.ERole.Riserva));
+            }
+            Assert.That(team.AddPlayer(new Player("mario", "rossi", Player.ERole.Riserva)) == false);
         }
 
         [Test]
