@@ -4,15 +4,16 @@ namespace UnitTest
 {
     public class Tests
     {
+        Team team;
         [SetUp]
         public void Setup()
         {
+            team = new Team("team 1");
         }
 
         [Test]
         public void AddPlayers()
         {
-            Team team = new Team("team 1");
             for(int c = 0; c <= 3; c++)
             {
                 team.AddPlayer(new Player("mario", "rossi", Player.ERole.Riserva));
@@ -23,7 +24,7 @@ namespace UnitTest
         [Test]
         public void AddCaptain()
         {
-            // TODO U.2
+            Assert.That(team.AddCaptain(new Player("mario", "rossi", Player.ERole.Riserva)) == false);
         }
     }
 }
