@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,7 +63,12 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-            // TODO T.4
+            string description = "";
+            for(int c = 0; c < players.Count; c++)
+            {
+                description = description + players[c].Description() + ", \n";
+            }
+            return description;
         }
 
         public string Name { get { return name; } }
